@@ -4,98 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Étudiants</title>
-    <style>
-        /* Reset & base */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f7fa;
-            padding: 20px;
-        }
-
-        /* Header */
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        /* Main layout */
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Sections */
-        .form-section,
-        .list-section {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Form styles */
-        form input {
-            width: calc(50% - 12px);
-            padding: 10px;
-            margin: 8px 6px 16px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        form button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        form button:hover {
-            background-color: #0056b3;
-        }
-
-        /* Table styles */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        /* Delete button */
-        .delete-btn {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .delete-btn:hover {
-            background-color: #b52a37;
-        }
-    </style>
+   <link rel="stylesheet" href="Gestion des etudiants.css">
 </head>
 <body>
     <header>
@@ -132,39 +41,7 @@
             </table>
         </section>
     </main>
-
-    <script>
-        const form = document.getElementById('student-form');
-        const studentList = document.getElementById('student-list');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const matiere = document.getElementById('matiere').value;
-            const filiere = document.getElementById('filiere').value;
-
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${name}</td>
-                <td>${email}</td>
-                <td>${matiere}</td>
-                <td>${filiere}</td>
-                <td><button class="delete-btn">Supprimer</button></td>
-            `;
-            studentList.appendChild(row);
-            form.reset();
-        });
-
-        studentList.addEventListener('click', function(e) {
-            if (e.target.classList.contains('delete-btn')) {
-                if (confirm("Voulez-vous vraiment supprimer cet étudiant ?")) {
-                    e.target.closest('tr').remove();
-                }
-            }
-        });
-    </script>
+<script src="Gestion des etudiants.js"></script>
 </body>
 </html>
 
